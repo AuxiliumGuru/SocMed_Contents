@@ -1,4 +1,4 @@
-public class DecimalExapansion {
+public class DecimalExpansion {
 	
 
 	public static void main(String[] args) {
