@@ -1,11 +1,44 @@
 public class DecimalExapansion {
 	
-	// Binary to Decimal 
-	
+
 	public static void main(String[] args) {
 		System.out.println(bi_to_dec("101"));
+		System.out.println(oct_to_dec("303237"));
 	}
+// - Octal to Decimal -
+ /**
+     * Converts an octal number to a decimal number.
+     *
+     * @param octal The octal number to be converted (as a string).
+     * @return The equivalent decimal representation as a string.
+     */
+    public static String oct_to_dec(String octal) {
+        // Initialize the decimal value to 0
+        Integer decimal = 0;
+        
+        // Convert the octal string to a character array
+        char[] octalArray = octal.toCharArray();
+        
+        // Iterate over the octal digits from right to left
+        for (int i = octal.length() - 1; i >= 0; i--) {
+            // Convert the octal digit to an integer value
+            int octDigit = octalArray[i] - '0';
+            
+            //calculates 8 raised to the power of the position difference 
+            //between the current position i and the rightmost position of 
+            //the octal string (which is octal.length() - 1)
+            int decDigit = (int) (octDigit * Math.pow(8, octal.length() - i - 1));
+            
+         // Add decDigit to decimal and assign it back to the decimal variable
+            decimal += decDigit;
+        }
+        
+        // Convert the decimal result to a string and return it
+        return decimal.toString();
+    }
+
 	
+	// - Binary to Decimal -
 	 /**
 	 * Converts a binary number to its decimal representation.
 	 *
