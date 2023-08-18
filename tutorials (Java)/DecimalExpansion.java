@@ -1,11 +1,12 @@
 public class DecimalExpansion {
-	
 
-	public static void main(String[] args) {
-		System.out.println(bi_to_dec("101"));
-		System.out.println(oct_to_dec("303237"));
-		System.out.println(hex_to_dec("FACED"));
-	}
+	// I've Removed all the static declaration of the functions so that we can accomodate to the new changes made.
+
+	// public static void main(String[] args) {
+	// 	System.out.println(bi_to_dec("101"));
+	// 	System.out.println(oct_to_dec("303237"));
+	// 	System.out.println(hex_to_dec("FACED"));
+	// }
 	
 	// - Hexadecimal to Decimal
 	
@@ -14,7 +15,7 @@ public class DecimalExpansion {
 	 * @param hex ; The hexadecimal number to be converted
 	 * @return the equivalent decimal representation as a string
 	 */
-	public static String hex_to_dec(String hex) {
+	public String hex_to_dec(String hex) {
 		Integer decimal = 0;
 		char[] decimalArray = hex.toCharArray();
 		
@@ -34,7 +35,7 @@ public class DecimalExpansion {
 	 * @return the equivalent Decimal representation as integer
 	 * @throws IllegalStateException - for invalid hex char
 	 */
-	public static int getDecEquivalent(char hex) {
+	private int getDecEquivalent(char hex) {
 		switch(hex) {
 		case '1':
 			return 1;
@@ -79,7 +80,7 @@ public class DecimalExpansion {
      * @param octal The octal number to be converted (as a string).
      * @return The equivalent decimal representation as a string.
      */
-    public static String oct_to_dec(String octal) {
+    public String oct_to_dec(String octal) {
         // Initialize the decimal value to 0
         Integer decimal = 0;
         
@@ -112,7 +113,7 @@ public class DecimalExpansion {
 	 * @param binary A string containing the binary representation.
 	 * @return The decimal representation of the provided binary number.
 	 */
-    public static String bi_to_dec(String binary) {
+    public String bi_to_dec(String binary) {
     	// I used an Integer wrapper class in this 'decimal' variable declaration
     	// to make it an object rather than primitive int, so that we can call
     	// the .toString()
