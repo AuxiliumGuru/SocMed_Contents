@@ -5,16 +5,30 @@ public class BinaryExpansion {
 	
 	DecimalExpansion dec;
 	
+	// Hexadecimal to binary
+	
+	public String hex_to_bi(String hex) {
+		
+		dec = new DecimalExpansion();
+		
+		return dec_to_bi(Integer.parseInt(dec.hex_to_dec(hex)));
+	}
+	
+	
 	
 	/**
 	 *  Method to convert a octal number to its binary representation
-	 * @param octal (Octal string value)
+	 * @param octal (Octal value)
 	 * @return binary equivalent (string)
 	 */
+	
 	 public String oct_to_bi(String octal) {
-		 // Create an instance of the DecimalExpansion class
+		 // Creates an instance of the DecimalExpansion Class
 			dec = new DecimalExpansion();
-		 // returns binary representation of the given octal number
+			// returns the binary representation of the given octal number
+			// by converting first the octal number to decimal number
+			// then using that converted decimal number as the argument for
+			// the dec_to_bi() function
 			return dec_to_bi(Integer.parseInt(dec.oct_to_dec(octal)));
 		}
 	
