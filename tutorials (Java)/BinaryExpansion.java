@@ -5,15 +5,20 @@ public class BinaryExpansion {
 	
 	DecimalExpansion dec;
 	
-	// Hexadecimal to binary
-	
+	/**
+	 *  Method to convert a hexadecimal number to its binary representation
+	 * @param hex (HexaDecimal value)
+	 * @return binary equivalent (string)
+	 */
 	public String hex_to_bi(String hex) {
-		
+		// Creates an instance of the DecimalExpansion Class
 		dec = new DecimalExpansion();
-		
+		// returns the binary representation of the given hex number
+		// by converting first the hexadecimal number to decimal number
+		// then using that converted decimal number as the argument for
+		// the dec_to_bi() function
 		return dec_to_bi(Integer.parseInt(dec.hex_to_dec(hex)));
 	}
-	
 	
 	
 	/**
