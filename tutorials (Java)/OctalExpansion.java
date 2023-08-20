@@ -1,8 +1,28 @@
+package tutorial;
+
 public class OctalExpansion {
 	
-	public static void main(String[] args) {
-		System.out.println(dec_to_oct(9));
+	
+	DecimalExpansion dec;
+	
+	/**
+	 *  Method to convert a binary number to its octal representation
+	 * @param binarry (Binary value)
+	 * @return octal equivalent (string)
+	 */
+	public String bi_to_oct(String binary) {
+		// Creates an instance of the DecimalExpansion Class
+		dec = new DecimalExpansion();
+		
+		// returns the octal representation of the given binary number
+		// by converting first the binary number to decimal number using the function
+		// bi_to_dec() from the dec (DecimalExpansion class)
+		// then using that converted decimal number as the argument for
+		// the dec_to_bi() function
+		return dec_to_oct(Integer.parseInt(dec.bi_to_dec(binary)));
 	}
+	
+	
 	
 	/**
      * Converts a decimal number to its octal representation.
@@ -10,7 +30,7 @@ public class OctalExpansion {
      * @param decimal The decimal number to be converted to octal.
      * @return The octal representation of the input decimal number as a string.
      */
-    public static String dec_to_oct(int decimal) {
+    public String dec_to_oct(int decimal) {
     	// Creates an instance of the StringBuilder class
         StringBuilder octal = new StringBuilder();
         
@@ -37,4 +57,5 @@ public class OctalExpansion {
      * 		This code is somehow similar to the dec_to_binary we did. 
      *	We just changed the base to 8, instead of 2
      */
+	
 }
