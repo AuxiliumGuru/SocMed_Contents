@@ -1,5 +1,3 @@
-package tutorial;
-
 public class OctalExpansion {
 	
 	
@@ -7,7 +5,26 @@ public class OctalExpansion {
 	
 	/**
 	 *  Method to convert a binary number to its octal representation
-	 * @param binarry (Binary value)
+	 * @param hex (Hexadecimal value)
+	 * @return octal equivalent (string)
+	 */
+	
+	public String hex_to_oct(String hex) {
+		// Creates an instance of the DecimalExpansion Class
+		dec = new DecimalExpansion();
+		
+		// returns the octal representation of the given binary number
+		// by converting first the hexadecimal number to decimal number using the function
+		// hex_to_dec() from the dec object (DecimalExpansion class)
+		// then using that converted decimal number that is then parsed to Integer
+		// as the argument for the dec_to_oct() function
+		return dec_to_oct(Integer.parseInt(dec.hex_to_dec(hex)));
+	}
+	
+	
+	/**
+	 *  Method to convert a binary number to its octal representation
+	 * @param binary (Binary value)
 	 * @return octal equivalent (string)
 	 */
 	public String bi_to_oct(String binary) {
@@ -18,7 +35,7 @@ public class OctalExpansion {
 		// by converting first the binary number to decimal number using the function
 		// bi_to_dec() from the dec (DecimalExpansion class)
 		// then using that converted decimal number as the argument for
-		// the dec_to_bi() function
+		// the dec_to_oct() function
 		return dec_to_oct(Integer.parseInt(dec.bi_to_dec(binary)));
 	}
 	
