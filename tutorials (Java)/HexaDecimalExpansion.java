@@ -1,18 +1,60 @@
 public class HexaDecimalExpansion {
 	
-	public static void main(String[] args) {
-		System.out.println(hex_expansion(200));
+	
+	DecimalExpansion dec;
+	
+	
+	/**
+	 *  Method to convert a binary number to its hexadecimal representation
+	 * @param binary (String)
+	 * @return hexadecimal equivalent (string)
+	 */
+	
+	public String bi_to_hex(String binary) {
+		// Creates an instance of the DecimalExpansion Class
+		dec = new DecimalExpansion();
+		
+		// returns the hexadecimal representation of the given binary number
+		// by converting first the binary number to decimal number using the function
+		// oct_to_dec() from the dec object (DecimalExpansion class)
+		// then using that converted decimal number that is then parsed to Integer
+		// as the argument for the dec_to_hex() function
+		return dec_to_hex(Integer.parseInt(dec.bi_to_dec(binary)));
 	}
 	
+	
+	
+	
+	/**
+	 *  Method to convert an octal number to its hexadecimal representation
+	 * @param octal (String)
+	 * @return hexadecimal equivalent (string)
+	 */
+	
+	public String oct_to_hex(String octal) {
+		// Creates an instance of the DecimalExpansion Class
+		dec = new DecimalExpansion();
+		
+		// returns the hexadecimal representation of the given octal number
+		// by converting first the octal number to decimal number using the function
+		// oct_to_dec() from the dec object (DecimalExpansion class)
+		// then using that converted decimal number that is then parsed to Integer
+		// as the argument for the dec_to_hex() function
+		return dec_to_hex(Integer.parseInt(dec.oct_to_dec(octal)));
+	}
+	
+	
+	
+
 	/**
 	 *  Method to convert a decimal number to its hexadecimal representation
 	 * @param dec (integer)
 	 * @return hexadecimal equivalent (string)
 	 */
-    public static String hex_expansion(int decimal) {
+    public String dec_to_hex(int decimal) {
         // StringBuilder to store the hexadecimal representation
         StringBuilder hex = new StringBuilder();
-        // remainder var to stor remainders of each modulo operation
+
         int remainder;
         // Loop to perform hexadecimal conversion
         while (decimal > 0) {
